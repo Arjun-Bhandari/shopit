@@ -1,0 +1,9 @@
+@import './variables';
+@import './mixins';
+
+// Global styles
+body {
+  @apply bg-gray-100 text-gray-800;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
