@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from "../../../components/Header/logo.png"
+import { Link } from 'react-router-dom'
 
 export default function AuthSignup(props) {
     
@@ -83,9 +84,11 @@ export default function AuthSignup(props) {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Already a  member?{' '}
+            <Link to='/login' >
             <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
               Login
             </a>
+            </Link>
           </p>
         </div>
       </div>
