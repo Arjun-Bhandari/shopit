@@ -2,19 +2,19 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { fetchProduct } from "./productListAPI";
 
 const initialState = {
-  product: [],
+  auth: [],
   status: "idel",
 };
 
 export const incrementAsync = createAsyncThunk(
-  "product/fetchProduct",
+  "auth/fetchProduct",
   async (product) => {
     const response = await fetchProduct(product);
     return response.data;
   }
 );
-export const productSlice = createSlice({
-  name: "product",
+export const authSlice = createSlice({
+  name: "auth",
   initialState,
   reducers: {
     addProduct :(state)=>{
@@ -38,4 +38,4 @@ export const {addProduct,removeProduct} = productSlice.actions;
 
 export const selectProduct = (state)=>state.counter.value
 
-export default productSlice.reducer;
+export default authSlice.reducer;
