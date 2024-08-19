@@ -1,12 +1,4 @@
 import { useState } from "react";
-import {
-  Dialog,
-  DialogBackdrop,
-  DialogPanel,
-  DialogTitle,
-} from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
 
 const products = [
   {
@@ -92,8 +84,13 @@ export default function Cartlayout() {
                         {product.color}
                       </p>
                     </div>
-                    <div className="flex flex-1 items-end justify-between text-sm">
-                      <p className="text-gray-500">Qty {product.quantity}</p>
+                    <div className="flex flex-1 items-end justify-between  text-sm">
+                      <p className="text-gray-500">Qty 
+                        <select className="ml-4 rounded-xl py-0">
+                        <option value={product.quantity}>1</option>
+                        <option value={product.quantity}>2</option>
+                        <option value={product.quantity}>3</option>
+                        </select></p>
 
                       <div className="flex">
                         <button

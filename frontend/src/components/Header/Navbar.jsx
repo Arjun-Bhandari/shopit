@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../styles/base.scss"
+import "../Header/Navbar.scss"
 import {
   Dialog,
   Disclosure,
