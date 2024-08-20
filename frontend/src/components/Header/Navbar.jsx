@@ -19,7 +19,8 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import logo from "../Header/logo.png";
-import { Cart } from "../../pages/index";
+
+import Cartlayout from "../../features/cart/compenent/CartLayout";
 
 const navigation = [
   { name: "Dashboard", href: "#", current: true },
@@ -83,7 +84,7 @@ export default function Navbar() {
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <button
                 type="button"
-                onClick={() => toggleCart()}
+                onClick={()=>toggleCart()}
                 className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
               >
                 <ShoppingCartIcon aria-hidden="true" className="h-6 w-6" />
@@ -182,7 +183,7 @@ export default function Navbar() {
                         <div className="ml-3 flex h-7 items-center">
                           <button
                             type="button"
-                            onClick={() => toggleCart()}
+                            onClick={()=>toggleCart()}
                             className="relative -m-2 p-2 text-gray-400 hover:text-gray-500"
                           >
                             <span className="absolute -inset-0.5" />
@@ -191,7 +192,7 @@ export default function Navbar() {
                           </button>
                         </div>
                       </div>
-                      <Cart />
+                      <Cartlayout toggle={toggleCart} />
                     </div>
                   </div>
                 </DialogPanel>

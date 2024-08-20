@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
@@ -52,12 +54,9 @@ const products = [
   // More products...
 ];
 
-export default function Cartlayout() {
-  const [open, setOpen] = useState(true);
-
+export default function Cartlayout({toggle}) {
   return (
    <>
-
       {" "}
         <div className="mt-8">
           <div className="flow-root">
@@ -117,25 +116,26 @@ export default function Cartlayout() {
           Shipping and taxes calculated at checkout.
         </p>
         <div className="mt-6">
-          <a
-            href="#"
+        <Link to="/checkout" onClick={toggle}
             className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
           >
             Checkout
-          </a>
+          </Link>
         </div>
         <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
+         <Link to="/">
           <p>
             or{" "}
             <button
               type="button"
-              onClick={() => setOpen(false)}
+              onClick={toggle}
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
               Continue Shopping
               <span aria-hidden="true"> &rarr;</span>
             </button>
           </p>
+          </Link>
         </div>
       </div>
       
