@@ -27,7 +27,7 @@ const CheckoutLayout = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen flex justify-center items-start p-6">
-      <div className="max-w-4xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
         
         {/* Contact and Shipping Information */}
         <div className="bg-white p-6 rounded-lg shadow">
