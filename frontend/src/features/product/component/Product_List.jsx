@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addProduct, removeProduct } from "../productListSlice";
+import { addProduct, removeProduct } from "../productSlice";
 import FilterLayout from "../../../components/FilterLayout";
 
 

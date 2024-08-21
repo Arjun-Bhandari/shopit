@@ -1,9 +1,13 @@
-import Home from "./Home"
-import Login from "./Login"
-import Signup from "./Signup"
+import Home from "./HomePage"
+import Login from "./LoginPage"
+import Signup from "./SignupPage"
+import Checkout from "./CheckoutPage"
+import ProductDetailPage from "./ProductDetailPage"
 
 export{
     Home,
     Login,
     Signup,
+    Checkout,
+    ProductDetailPage,
 }

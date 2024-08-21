@@ -23,7 +23,7 @@ import logo from "../Header/logo.png";
 import Cartlayout from "../../features/cart/compenent/CartLayout";
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
+  { name: "Home", href: "/", current: true },
   { name: "Team", href: "#", current: false },
   { name: "Projects", href: "#", current: false },
   { name: "Calendar", href: "#", current: false },

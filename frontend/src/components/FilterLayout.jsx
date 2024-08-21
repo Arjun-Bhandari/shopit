@@ -23,6 +23,7 @@ import {
 } from "@heroicons/react/20/solid";
 import Card from "../components/Card";
 import Pagination from "./Pagination";
+import { Link } from "react-router-dom";
 const sortOptions = [
   { name: "Most Popular", href: "#", current: true },
   { name: "Best Rating", href: "#", current: false },

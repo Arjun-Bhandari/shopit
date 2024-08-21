@@ -4,8 +4,9 @@ import { Provider } from 'react-redux'
 import { RouterProvider,createBrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './index.css'
-import {Home,Login,Signup} from "./pages/index.js"
-import { Checkout } from './pages/Checkout.jsx'
+import {Home,Login,Signup,Checkout,ProductDetailPage} from "./pages/index.js"
+
+import {  } from './pages/ProductDetailPage.jsx'
 const router = createBrowserRouter([
   {
     path:"/",
@@ -26,7 +27,11 @@ const router = createBrowserRouter([
       {
         path:"/checkout",
         element:<Checkout/>
-      }
+      },
+      {
+        path:"/product-detail",
+        element:<ProductDetailPage/>
+      },
     ]
   }
 ])
