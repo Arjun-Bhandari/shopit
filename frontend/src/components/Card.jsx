@@ -25,7 +25,7 @@ export default function Card(
         </div>
         </Link>
         <div className="product-details mt-4">
-          <h2 className="product-name ">{productName}</h2>
+          <h5 className="product-name">{productName}</h5>
           <p className="product-size ">{productSize}ml</p>
       
           <div className="product-price ">

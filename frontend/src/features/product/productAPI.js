@@ -1,7 +1,8 @@
 
-export function fetchProduct(product) {
+export function fetchAllProduct() {
   return new Promise(async (resolve) => {
-    const response = await fetch("http:localhose:8080");
+    // Todo i wil not hard code server URL here
+    const response = await fetch("http://localhost:8080/products");
     const data = await response.json();
     resolve(data);
   });
