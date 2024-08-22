@@ -24,9 +24,9 @@ import Cartlayout from "../../features/cart/compenent/CartLayout";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Contact", href: "#", current: false },
+  { name: "SignIn", href: "/login", current: false },
+  { name: "SignUp", href: "/register", current: false },
 ];
 
 function classNames(...classes) {
