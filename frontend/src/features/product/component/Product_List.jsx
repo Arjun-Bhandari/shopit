@@ -326,7 +326,7 @@ const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
                         <Card
                           productName={product.title}
                           productUrl={product.thumbnail}
-                          productSize={product.size}
+                          productCategory={product.category}
                           productPrice={product.price}
                         />
                       </div>
