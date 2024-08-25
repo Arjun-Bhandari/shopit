@@ -32,9 +32,9 @@ const sortOptions = [
   { name: "Price: High to Low", href: "#", current: false },
 ];
 const subCategories = [
-  { name: "Totes", href: "#" },
-  { name: "Backpacks", href: "#" },
-  { name: "Travel Bags", href: "#" },
+  { name: "Books", href: "#" },
+  { name: "Laptops", href: "#" },
+  { name: "Mobile Phones", href: "#" },
   { name: "Hip Bags", href: "#" },
   { name: "Laptop Sleeves", href: "#" },
 ];
@@ -55,7 +55,7 @@ const filters = [
     id: "category",
     name: "Category",
     options: [
-      { value: "new-arrivals", label: "New Arrivals", checked: false },
+      { value: "new-arrivals ", label: "New Arrivals", checked: false },
       { value: "sale", label: "Sale", checked: false },
       { value: "travel", label: "Travel", checked: true },
       { value: "organization", label: "Organization", checked: false },
