@@ -32,25 +32,19 @@ const sortOptions = [
   { name: "Price: High to Low", href: "#", current: false },
 ];
 const subCategories = [
-  { name: "Books", href: "#" },
-  { name: "Laptops", href: "#" },
-  { name: "Mobile Phones", href: "#" },
-  { name: "Hip Bags", href: "#" },
-  { name: "Laptop Sleeves", href: "#" },
+  { name: "Cars", href: "#" },
+  { name: "Properties", href: "#" },
+  { name: "Mobiles", href: "#" },
+  { name: "Bikes", href: "#" },
+  { name: "Electoronics & Appliences", href: "#" },
+  { name: "Furniture", href: "#" },
+  { name: "Pets", href: "#" },
+  { name: "Fashion", href: "#" },
+  { name: "Books & Sports", href: "#" },
+  { name: "Services", href: "#" },
 ];
 const filters = [
-  {
-    id: "color",
-    name: "Color",
-    options: [
-      { value: "white", label: "White", checked: false },
-      { value: "beige", label: "Beige", checked: false },
-      { value: "blue", label: "Blue", checked: true },
-      { value: "brown", label: "Brown", checked: false },
-      { value: "green", label: "Green", checked: false },
-      { value: "purple", label: "Purple", checked: false },
-    ],
-  },
+  
   {
     id: "brand",
     name: "Brand",
@@ -60,18 +54,6 @@ const filters = [
       { value: "travel", label: "Travel", checked: true },
       { value: "organization", label: "Organization", checked: false },
       { value: "accessories", label: "Accessories", checked: false },
-    ],
-  },
-  {
-    id: "size",
-    name: "Size",
-    options: [
-      { value: "2l", label: "2L", checked: false },
-      { value: "6l", label: "6L", checked: false },
-      { value: "12l", label: "12L", checked: false },
-      { value: "18l", label: "18L", checked: false },
-      { value: "20l", label: "20L", checked: false },
-      { value: "40l", label: "40L", checked: true },
     ],
   },
 ];
@@ -183,6 +165,7 @@ const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
                     </DisclosurePanel>
                   </Disclosure>
                 ))}
+
               </form>
             </DialogPanel>
           </div>
