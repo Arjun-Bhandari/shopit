@@ -43,10 +43,11 @@ const subCategories = [
   { name: "Books & Sports", href: "#" },
   { name: "Services", href: "#" },
 ];
+
 const filters = [
   {
-    id: "brand",
-    name: "Brand",
+    id: "brands",
+    name: "Brands",
     options: [
       { value: "Essence", label: "Essence", checked: false },
       { value: "Glamour Beauty", label: "Glamour Beauty", checked: false },
