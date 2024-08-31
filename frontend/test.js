@@ -1,5 +1,4 @@
-{
-  "products": [
+const products =  [
     {
       "id": 1,
       "title": "Essence Mascara Lash Princess",
@@ -6008,8 +6007,12 @@
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpods/thumbnail.png"
     }
-  ],
-  "total": 194,
-  "skip": 0,
-  "limit": 100
-}
+  ]
+  
+
+
+const brands = [...new Set([...products.map(p=>(p.brand))])]
+console.log(brands.map(b=>({value:b, label:b,checked:false})))
+
+const categories = [...new Set([...products.map(p=> p.category)])]
+console.log(categories)
