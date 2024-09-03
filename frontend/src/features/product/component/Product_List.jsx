@@ -25,11 +25,9 @@ import {
 } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
 const sortOptions = [
-  { name: "Most Popular", href: "#", current: true },
-  { name: "Best Rating", href: "#", current: false },
-  { name: "Newest", href: "#", current: false },
-  { name: "Price: Low to High", href: "#", current: false },
-  { name: "Price: High to Low", href: "#", current: false },
+  { name: "Best Rating", sort:'rating', order:'desc', current: false },
+  { name: "Price: Low to High", sort:'price',order:'asc', current: false },
+  { name: "Price: High to Low",sort:'price',order:'desc', current: false },
 ];
 const subCategories = [
   { name: "Cars", href: "#" },
@@ -102,7 +100,18 @@ export default function FilterLayout() {
     dispatch(fetchProductByFilterAsync(filter))
   }, [dispatch,filter])
   
+  const handelSort=(e,option)=>{
+    console.log(filter)
+    const newFilter = {...filter,_sort:option.sort,_order:option.order}
+    setFilter(newFilter)
+    console.log(newFilter)
+  }
 
+  useEffect(() => {
+    console.log(filter)
+    dispatch(fetchProductByFilterAsync(filter))
+  }, [dispatch,filter])
+  
   return (
     <div className="bg-white">
       <div>
@@ -225,8 +234,8 @@ export default function FilterLayout() {
                   <div className="py-1">
                     {sortOptions.map((option) => (
                       <MenuItem key={option.name}>
-                        <a
-                          href={option.href}
+                        <p
+                          onClick={(e)=>handelSort(e,option)}
                           className={classNames(
                             option.current
                               ? "font-medium text-gray-900"
@@ -235,7 +244,7 @@ export default function FilterLayout() {
                           )}
                         >
                           {option.name}
-                        </a>
+                        </p>
                       </MenuItem>
                     ))}
                   </div>

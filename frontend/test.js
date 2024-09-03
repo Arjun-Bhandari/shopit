@@ -6012,13 +6012,9 @@ const products =  [
 
 
 const brands = [...new Set([...products.map(p=>(p.brand))])]
-// console.log(brands.map(b=>({value:b, label:b,checked:false})))
+console.log(brands.map(b=>({value:b, label:b,checked:false})))
 
 const categories = [...new Set([...products.map(p=> p.category)])]
 console.log(categories.map(c=>({value:c,label:c.split('-').join(' '),checked:false})))
 
-// products.forEach(product => {
-//   if (product.brand === "Gucci") {
-//     console.log(product);
-//   }
-// });
+
