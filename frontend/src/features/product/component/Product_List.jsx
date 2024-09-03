@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "../../../components/Card";
 import Pagination from "../../../components/Pagination";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchAllProductAsync, selectAllProducts } from "../productSlice";
+import { fetchAllProductAsync, fetchProductByFilterAsync, selectAllProducts } from "../productSlice";
 import {
   Dialog,
   DialogBackdrop,
@@ -46,7 +46,7 @@ const subCategories = [
 
 const filters = [
   {
-    id: "brands",
+    id: "brand",
     name: "Brands",
     options: [
       { value: "Essence", label: "Essence", checked: false },
@@ -103,12 +103,20 @@ function classNames(...classes) {
 export default function FilterLayout() {
   const dispatch = useDispatch();
   const products = useSelector(selectAllProducts);
-
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [filter,setFilter] = useState({})
   useEffect(() => {
     dispatch(fetchAllProductAsync());
   }, [dispatch]);
 
-  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+
+  const handelFilter=(e,section,option)=>{
+    const newFilter = {...filter,[section.id]:option.vlaue}
+    setFilter(newFilter)
+    dispatch(fetchProductByFilterAsync(newFilter))
+    console.log(section.id,option.value)
+  }
+  
 
   return (
     <div className="bg-white">
@@ -186,6 +194,7 @@ export default function FilterLayout() {
                               defaultChecked={option.checked}
                               id={`filter-mobile-${section.id}-${optionIdx}`}
                               name={`${section.id}[]`}
+                              onChange={(e)=>handelFilter(e,section,option)}
                               type="checkbox"
                               className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                             />
