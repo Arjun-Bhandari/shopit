@@ -46,53 +46,33 @@ const subCategories = [
 
 const filters = [
   {
-    id: "brand",
-    name: "Brands",
-    options: [
-      { value: "Essence", label: "Essence", checked: false },
-      { value: "Glamour Beauty", label: "Glamour Beauty", checked: false },
-      { value: "Velvet Touch", label: "Velvet Touch", checked: false },
-      { value: "Chic Cosmetics", label: "Chic Cosmetics", checked: false },
-      { value: "Nail Couture", label: "Nail Couture", checked: false },
-      { value: "Calvin Klein", label: "Calvin Klein", checked: false },
-      { value: "Chanel", label: "Chanel", checked: false },
-      { value: "Dior", label: "Dior", checked: false },
+    id: "category",
+    name: "Category",
+    options:[
+      { value: 'beauty', label: 'beauty', checked: false },
+      { value: 'fragrances', label: 'fragrances', checked: false },
+      { value: 'furniture', label: 'furniture', checked: false },
+      { value: 'groceries', label: 'groceries', checked: false },
       {
-        value: "Dolce & Gabbana",
-        label: "Dolce & Gabbana",
-        checked: false,
+        value: 'home-decoration',
+        label: 'home decoration',
+        checked: false
       },
-      { value: "Gucci", label: "Gucci", checked: false },
       {
-        value: "Annibale Colombo",
-        label: "Annibale Colombo",
-        checked: false,
+        value: 'kitchen-accessories',
+        label: 'kitchen accessories',
+        checked: false
       },
-      { value: "Furniture Co.", label: "Furniture Co.", checked: false },
-      { value: "Knoll", label: "Knoll", checked: false },
-      { value: "Bath Trends", label: "Bath Trends", checked: false },
-      { value: "Apple", label: "Apple", checked: false },
-      { value: "Asus", label: "Asus", checked: false },
-      { value: "Huawei", label: "Huawei", checked: false },
-      { value: "Lenovo", label: "Lenovo", checked: false },
-      { value: "Dell", label: "Dell", checked: false },
-      { value: "Fashion Trends", label: "Fashion Trends", checked: false },
-      { value: "Gigabyte", label: "Gigabyte", checked: false },
-      { value: "Classic Wear", label: "Classic Wear", checked: false },
-      { value: "Casual Comfort", label: "Casual Comfort", checked: false },
-      { value: "Urban Chic", label: "Urban Chic", checked: false },
-      { value: "Nike", label: "Nike", checked: false },
-      { value: "Puma", label: "Puma", checked: false },
-      { value: "Off White", label: "Off White", checked: false },
+      { value: 'laptops', label: 'laptops', checked: false },
+      { value: 'mens-shirts', label: 'mens shirts', checked: false },
+      { value: 'mens-shoes', label: 'mens shoes', checked: false },
+      { value: 'mens-watches', label: 'mens watches', checked: false },
       {
-        value: "Fashion Timepieces",
-        label: "Fashion Timepieces",
-        checked: false,
-      },
-      { value: "Longines", label: "Longines", checked: false },
-      { value: "Rolex", label: "Rolex", checked: false },
-      { value: "Amazon", label: "Amazon", checked: false },
-    ],
+        value: 'mobile-accessories',
+        label: 'mobile accessories',
+        checked: false
+      }
+    ]
   },
 ];
 
@@ -111,11 +91,16 @@ export default function FilterLayout() {
 
 
   const handelFilter=(e,section,option)=>{
-    const newFilter = {...filter,[section.id]:option.vlaue}
+    console.log(filter)
+    const newFilter = {...filter,[section.id]:option.value}
     setFilter(newFilter)
-    dispatch(fetchProductByFilterAsync(newFilter))
-    console.log(section.id,option.value)
+    console.log(newFilter)
   }
+
+  useEffect(() => {
+    console.log(filter)
+    dispatch(fetchProductByFilterAsync(filter))
+  }, [dispatch,filter])
   
 
   return (
@@ -161,7 +146,7 @@ export default function FilterLayout() {
                     </li>
                   ))}
                 </ul>
-
+{/* Small Screen View */}
                 {filters.map((section) => (
                   <Disclosure
                     key={section.id}
@@ -294,7 +279,7 @@ export default function FilterLayout() {
                     </li>
                   ))}
                 </ul>
-
+{/* Large Screen view */}
                 {filters.map((section) => (
                   <Disclosure
                     key={section.id}
@@ -327,6 +312,7 @@ export default function FilterLayout() {
                               defaultChecked={option.checked}
                               id={`filter-${section.id}-${optionIdx}`}
                               name={`${section.id}[]`}
+                              onChange={(e)=>handelFilter(e,section,option)}
                               type="checkbox"
                               className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                             />
@@ -346,8 +332,9 @@ export default function FilterLayout() {
 
               {/* Product grid */}
               <div className="lg:col-span-3">
+              
                 <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 space-y-2">
-                  {products.map((product) => {
+                {products.map((product) => {
                     return (
                       <div id={product.id}>
                         <Card
@@ -357,9 +344,9 @@ export default function FilterLayout() {
                           productPrice={product.price}
                         />
                       </div>
-                    );
+                       );
                   })}
-                </div>
+                 </div>
               </div>
             </div>
           </section>
