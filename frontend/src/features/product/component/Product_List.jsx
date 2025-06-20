@@ -33,51 +33,127 @@ const sortOptions = [
   { name: "Price: Low to High", sort: "price", current: false },
   { name: "Price: High to Low", sort: "-price", current: false },
 ];
-const subCategories = [
-  { name: "Cars", href: "#" },
-  { name: "Properties", href: "#" },
-  { name: "Mobiles", href: "#" },
-  { name: "Bikes", href: "#" },
-  { name: "Electoronics & Appliences", href: "#" },
-  { name: "Furniture", href: "#" },
-  { name: "Pets", href: "#" },
-  { name: "Fashion", href: "#" },
-  { name: "Books & Sports", href: "#" },
-  { name: "Services", href: "#" },
-];
+// const subCategories = [
+//   { name: "Cars", href: "#" },
+//   { name: "Properties", href: "#" },
+//   { name: "Mobiles", href: "#" },
+//   { name: "Bikes", href: "#" },
+//   { name: "Electoronics & Appliences", href: "#" },
+//   { name: "Furniture", href: "#" },
+//   { name: "Pets", href: "#" },
+//   { name: "Fashion", href: "#" },
+//   { name: "Books & Sports", href: "#" },
+//   { name: "Services", href: "#" },
+// ];
+
+// const filters = [
+//   {
+//     id: "category",
+//     name: "Category",
+//     options: [
+//       { value: "beauty", label: "beauty", checked: false },
+//       { value: "fragrances", label: "fragrances", checked: false },
+//       { value: "furniture", label: "furniture", checked: false },
+//       { value: "groceries", label: "groceries", checked: false },
+//       {
+//         value: "home-decoration",
+//         label: "home decoration",
+//         checked: false,
+//       },
+//       {
+//         value: "kitchen-accessories",
+//         label: "kitchen accessories",
+//         checked: false,
+//       },
+//       { value: "laptops", label: "laptops", checked: false },
+//       { value: "mens-shirts", label: "mens shirts", checked: false },
+//       { value: "mens-shoes", label: "mens shoes", checked: false },
+//       { value: "mens-watches", label: "mens watches", checked: false },
+//       {
+//         value: "mobile-accessories",
+//         label: "mobile accessories",
+//         checked: false,
+//       },
+//     ],
+//   },
+// ];
+
 
 const filters = [
   {
     id: "category",
     name: "Category",
     options: [
-      { value: "beauty", label: "beauty", checked: false },
-      { value: "fragrances", label: "fragrances", checked: false },
-      { value: "furniture", label: "furniture", checked: false },
-      { value: "groceries", label: "groceries", checked: false },
-      {
-        value: "home-decoration",
-        label: "home decoration",
-        checked: false,
+      { 
+        value: "pain-relief-fever", 
+        label: "Pain Relief & Fever", 
+        checked: false 
       },
-      {
-        value: "kitchen-accessories",
-        label: "kitchen accessories",
-        checked: false,
+      { 
+        value: "antibiotics", 
+        label: "Antibiotics (Rx)", 
+        checked: false 
       },
-      { value: "laptops", label: "laptops", checked: false },
-      { value: "mens-shirts", label: "mens shirts", checked: false },
-      { value: "mens-shoes", label: "mens shoes", checked: false },
-      { value: "mens-watches", label: "mens watches", checked: false },
-      {
-        value: "mobile-accessories",
-        label: "mobile accessories",
-        checked: false,
+      { 
+        value: "vitamins-supplements", 
+        label: "Vitamins & Supplements", 
+        checked: false 
       },
+      { 
+        value: "diabetes-care", 
+        label: "Diabetes Care", 
+        checked: false 
+      },
+      { 
+        value: "cardiology", 
+        label: "Cardiology", 
+        checked: false 
+      },
+      { 
+        value: "dermatology", 
+        label: "Dermatology", 
+        checked: false 
+      },
+      { 
+        value: "medical-devices", 
+        label: "Medical Devices", 
+        checked: false 
+      },
+      { 
+        value: "cold-cough", 
+        label: "Cold & Cough", 
+        checked: false 
+      },
+      { 
+        value: "digestive-health", 
+        label: "Digestive Health", 
+        checked: false 
+      },
+      { 
+        value: "mental-wellness", 
+        label: "Mental Wellness", 
+        checked: false 
+      }
     ],
   },
+  // Optional: Add a prescription filter
+  {
+    id: "prescription",
+    name: "Prescription Required",
+    options: [
+      { 
+        value: "yes", 
+        label: "Prescription Only", 
+        checked: false 
+      },
+      { 
+        value: "no", 
+        label: "OTC (No Prescription)", 
+        checked: false 
+      }
+    ]
+  }
 ];
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -186,7 +262,7 @@ export default function FilterLayout() {
               {/* Filters */}
               <form className="hidden lg:block">
                 <h3 className="sr-only">Categories</h3>
-                <ul
+                {/* <ul
                   role="list"
                   className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900"
                 >
@@ -195,7 +271,7 @@ export default function FilterLayout() {
                       <a href={category.href}>{category.name}</a>
                     </li>
                   ))}
-                </ul>
+                </ul> */}
                 {/* Large Screen view */}
                 {filters.map((section) => (
                   <Disclosure
@@ -308,7 +384,7 @@ function MobileDialog({setMobileFiltersOpen,mobileFiltersOpen,handelFilter}) {
             {/* Filters */}
             <form className="mt-4 border-t border-gray-200">
               <h3 className="sr-only">Categories</h3>
-              <ul role="list" className="px-2 py-3 font-medium text-gray-900">
+              {/* <ul role="list" className="px-2 py-3 font-medium text-gray-900">
                 {subCategories.map((category) => (
                   <li key={category.name}>
                     <a href={category.href} className="block px-2 py-3">
@@ -316,7 +392,7 @@ function MobileDialog({setMobileFiltersOpen,mobileFiltersOpen,handelFilter}) {
                     </a>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
               {/* Small Screen View */}
               {filters.map((section) => (
                 <Disclosure

@@ -59,7 +59,8 @@ export default function Navbar() {
             </div>
             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
               <div className="flex flex-shrink-0 items-center">
-                <img alt="Your Company" src={logo} className="h-10 w-auto" />
+                {/* <img alt="Your Company" src={logo} className="h-10 w-auto" /> */}
+                <h1 className="text-3xl">Awsad<b className="text-yellow-600" >i</b> Sewa</h1>
               </div>
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
