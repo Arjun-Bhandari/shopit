@@ -1,6 +1,6 @@
 import { supabase } from '../config/supabase'
 import { db } from '../db'
-import { usersTable } from '../db/schema'
+import { usersTable } from '../db/schema/user'
 import { eq } from 'drizzle-orm'
 
 export const authService = {
@@ -38,13 +38,22 @@ export const authService = {
   },
 
   // Sign in with Google
-  async signInWithGoogle() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'google'
-    })
-    
-    if (error) throw error
-    return data
+  async signInWithGoogle({ redirectTo }: { redirectTo: string }) {
+    return await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo,
+        queryParams: {
+          access_type: 'offline',
+          prompt: 'consent',
+          
+        },
+      },
+    });
+  },
+
+  async handleAuthCallback(code: string) {
+    return await supabase.auth.exchangeCodeForSession(code);
   },
 
   // Sign out
