@@ -4,7 +4,7 @@ export const usersTable = pgTable('users_table', {
   id: uuid('id').primaryKey().notNull(),
   email: text('email').notNull().unique(),
   name: text('name').notNull(),
-  phone:integer('phone',{length:10}).unique(),
+  phone:integer('phone').unique(),
   created_at:timestamp("created_at").defaultNow()
 
 });

@@ -4,6 +4,9 @@
   "main": "dist/server.js",
   "type": "module",
   "scripts": {
+    "db-generate":"npx drizzle-kit generate",
+    "db-migrate": "npx drizzle-kit migrate",
+    "db-push":"npx drizzle-kit push",
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
