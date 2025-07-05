@@ -8,6 +8,13 @@
       "when": 1750755471396,
       "tag": "0000_illegal_whirlwind",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1751720656716,
+      "tag": "0001_motionless_shooting_star",
+      "breakpoints": true
     }
   ]
 }
